@@ -22,7 +22,9 @@ class _MyApp22State extends State<MyApp22> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(centerTitle: true, title: Text("ListView", style: TextStyle(color:(Colors.white))  ,), backgroundColor: const Color.fromARGB(255, 224, 135, 165),),
-      body:  ListView.separated(
+      body: Center(child: Column(children: [
+      ListView.separated(
+        shrinkWrap: true,
             separatorBuilder: (context, index) => Divider(thickness: 3),
             itemCount: listaAL.length,
             itemBuilder: (context, index){
@@ -32,8 +34,16 @@ class _MyApp22State extends State<MyApp22> {
                 trailing: Text(index.toString()),
                 leading: CircleAvatar(child: Text(listaAL[index].nome[0]),),
               );
-            }
-          ), 
+            },
+          ),
+          ElevatedButton(onPressed: () {
+            
+          }, child: Text("Voltar"))
+      ],
+      ),
+      )
+      
+       
 
    /*        ListTile(
             leading: Icon(Icons.map),
